@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<header id="register-section">
+  <div class="dark-overlay">
+    <div class="home-inner container">
+      <!-- <div class="col-lg-8 d-none d-lg-block">
+      </div> -->
+<!-- <div class="container"> -->
+<form method="POST" action = "" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+  <div class="form-row">
+    <!-- <div class="col">
+      {{ form.firstname.label (class="form-group") }}
+    </div> -->
+      <div class="col">
+        {{ form.firstname(class="form-control", placeholder="First name" ) }}
+        <!-- <input type="text" class="form-control" placeholder="First name"> -->
+      </div>
+      <!-- <div class="col">
+        {{ form.lastname.label (class="form-group") }}
+      </div> -->
+      <div class="col">
+        {{ form.lastname(class="form-control", placeholder="Last name") }}
+        <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+    <!-- {{ form.email.label (class="form-group") }} -->
+    {{ form.email(class="form-control", placeholder="Email") }}
+    </div>
+    <div class="form-group">
+    <!-- {{ form.username.label(class="form-group") }} -->
+    {{ form.username(class="form-control", placeholder="User Name") }}
+    </div>
+    <div class="form-group">
+    <!-- {{ form.password.label(class="form-group") }} -->
+    {{ form.password(class="form-control", placeholder="Password") }}
+    </div>
+    <div class="invalid-feedback">
+      Password Not strong enough
+    </div>
+    <div class="form-group">
+    <!-- {{ form.pass_confirm.label(class="form-group") }} -->
+    {{ form.pass_confirm(class="form-control", placeholder="Please confirm your Password") }}
+    </div>
+    <div class="invalid-feedback">
+      Password does not match
+    </div>
+    <div class = "form-group">
+      <!-- <small>{{ form.mobilenumber.label (class="form-group") }}</small> -->
+      {{ form.mobilenumber(class="form-control", placeholder="Mobile Number") }}
+      <!-- <form action = {{ form.mobilenumber() }} <method = "POST">
+      <input type="number" class="form-control" id="Mobile" placeholder="Enter Mobile Number"> -->
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="Checkbox">
+      <a class="form-check-label" href="{{ url_for('core.tcs') }}" >Accept Terms & Conditions </a>
+    </div>
+    <div class="form-group">
+    {{ form.submit(class="btn btn-primary btn-block") }}
+    </div>
+    <!-- DISMISSABLE ALERT -->
+        <div class="alert alert-success alert-dismissible">
+            <button class="close" type="button" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            <strong>Great!</strong> Your details have been accepted
+        </div>
+</form>
+
+</div>
+</div>
+</div>
+</header>
+{% endblock %}

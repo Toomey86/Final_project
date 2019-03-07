@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1 class="disply-5"> Business Expense Tracker</h1>
+    <p class="lead">Welcome to Our Company's Home Page</p>
+  </div>
+
+<Main>
+  <section id="posts">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+
+          <div class="card" >
+            <div class="card-header">
+              <h4>Expenses</h4>
+            </div>
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>User</th>
+                  <th>Published on:</th>
+                  <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    {% for post in blog_posts.items %}
+                    <td>{{ loop.index }}</td>
+                    <td><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></td>
+                    <td><a href="{{ url_for('users.user_posts', username=post.author.username) }}" >{{ post.author.username }}</a></td>
+                    <td><p class="card-subtitle"> {{ post.date.strftime('%Y-%m-%d') }}</p></td>
+                    <td>
+                    <a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" class="btn-btn-secondary">
+                      <i class="fas fa-angle-double-right"></i> Read Post
+                      </a>
+                    </td>
+
+                  </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Main>
+
+{% endblock %}

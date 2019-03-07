@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div class = "form-group">
+        {{ form.company_name(class="form-control", placeholder="Company Name" ) }}
+    </div>
+    <div class = "form-group">
+        {{ form.date(class="form-control", placeholder="date") }}
+    </div>
+
+    <div class="form-group">
+    <!-- {{ form.total.label (class="form-group") }} -->
+      {{ form.total(class="form-control", placeholder="Total") }}
+
+    <select class="custom-select">
+      <option selected>Please Choose correct currency </option>
+      {{form.currency()}}
+      <option value="1">EUR (Euro)</option>
+      <option value="2">BPB (Pound Sterling)</option>
+      <option value="3">USD (United States, Dollar)</option>
+    </div>
+
+    <!-- <div class="form-group">  category_dropdown -->
+    <div>
+    <select class="custom-select">
+    <option selected>Choose Expense Category</option>
+    <option value="1">Diesel</option>
+    <option value="2">Petrol</option>
+    <option value="3">CAR PARKING</option>
+    <option value="4">TOLLS</option>
+    <option value="5">AIR FARES</option>
+    <option value="6">TRAIN FARES</option>
+    <option value="7">OTHER TRAVEL</option>
+    <option value="8">ACCOMODATION</option>
+    <option value="9">SUBSISTENCE</option>
+    <option value="10">STAFF ENTERTAINING</option>
+    <option value="11">CUSTOMER ENTERTAINING</option>
+    <option value="12">STATIONARY</option>
+    <option value="13">MISCELLANEOUS </option>
+    </div>
+
+    <div class="form-group">
+    <!-- {{ form.password.label(class="form-group") }} -->
+    {{ form.description(class="form-control", placeholder="enter a Description of Expenditure") }}
+    </div>
+    <div class="form-group">
+      {{ form.receipt_picture.label(class="form-group") }}
+      {{ form.receipt_picture(class="form-control-file") }}
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="Vat Checkbox">
+      <a class="form-check-label" href="#" >Is there vat on the receipt? </a>
+    </div>
+    <div class="form-group">
+    {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+body{
+  background: #333;
+  /* color: #fff; */
+}
+
+#register-section{
+  background: url(register_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+}
+#register-section .dar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+:root {
+--funyellow: #feda6a;
+--SilverFox: #d4d4dc;
+--DeepMatteGrey: #393f4d;
+--DarkSlate: #1d1e22;
+}
+body{
+background-color: #bcd5d1;
+}
+.navbar{
+  border-bottom: #008ed6 3px solid;
+  opacity: 0.6;
+    /* margin-bottom: 0;
+    border-radius: 0;
+    background-color: #c9af98;
+    color: #d4d4dc; */
+    /* padding: 1% 0; */
+    /* font-size: 1.2em
+    border: 0; */
+  }
+.navbar-brand {
+  float: left;
+  min-height: 55px;
+  padding: 0 15px 5px;
+}
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
+  color: #d4d4dc;
+  background-color: #393f4d
+}
